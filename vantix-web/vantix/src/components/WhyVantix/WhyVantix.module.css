@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600&display=swap');
+
+.whyVantix {
+  padding: 40px 60px 80px;
+  background-color: #ffffff;
+}
+
+.whyVantixContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.whyVantixTitle {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: #0a2540;
+  margin-bottom: 32px;
+}
+
+.whyVantixList {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 32px;
+}
+
+.whyVantixList li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+.checkIcon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.whyVantixRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whyVantixImage {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.whyVantixImage:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 992px) {
+  .whyVantixContent {
+    grid-template-columns: 1fr;
+  }
+
+  .whyVantixRight {
+    grid-template-columns: 1fr;
+  }
+}

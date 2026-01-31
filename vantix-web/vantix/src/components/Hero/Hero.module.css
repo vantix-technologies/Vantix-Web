@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;600&display=swap');
+
+.hero {
+  background-image: url("../../assets/banner_home.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 660px;
+  padding: 80px 60px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Overlay para móviles - invisible en desktop */
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.heroContent {
+  max-width: 750px;
+  margin-left: 45px;
+  position: relative;
+  z-index: 2;
+  
+  /* Animación de entrada */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.heroContentVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.heroTitle {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 58px;
+  font-weight: 600;
+  color: #113d69;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+  margin-bottom: 24px;
+  max-width: 800px;
+  
+  /* Animación de entrada con delay */
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s backwards;
+}
+
+.heroSubtitle {
+  font-size: 22px;
+  color: #555;
+  margin-bottom: 30px;
+  
+  /* Animación de entrada con delay */
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s backwards;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 15px;
+  
+  /* Animación de entrada con delay */
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.6s backwards;
+}
+
+.heroBtnPrimary {
+  background-color: #005Fa3;
+  color: #ffffff;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.heroBtnPrimary:hover {
+  background-color: #00345a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 95, 163, 0.4);
+}
+
+.heroBtnSecondary {
+  background-color: #ffffff;
+  color: #0a2540;
+  padding: 14px 22px;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.heroBtnSecondary:hover {
+  background-color: #f5f5f5;
+  border-color: #005Fa3;
+  color: #005Fa3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Elementos decorativos animados */
+.heroDecorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heroCircle1,
+.heroCircle2,
+.heroCircle3 {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 95, 163, 0.1) 0%, transparent 70%);
+}
+
+.heroCircle1 {
+  width: 400px;
+  height: 400px;
+  top: -100px;
+  right: 10%;
+  animation: float 8s ease-in-out infinite;
+}
+
+.heroCircle2 {
+  width: 300px;
+  height: 300px;
+  bottom: -80px;
+  right: 25%;
+  animation: float 10s ease-in-out infinite 2s;
+}
+
+.heroCircle3 {
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  right: 5%;
+  animation: float 12s ease-in-out infinite 4s;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-30px) scale(1.05);
+  }
+}
+
+/* Responsive Tablet */
+@media (max-width: 992px) {
+  .hero {
+    min-height: 560px;
+    padding: 60px 40px;
+  }
+
+  .heroContent {
+    margin-left: 20px;
+  }
+
+  .heroTitle {
+    font-size: 48px;
+  }
+
+  .heroSubtitle {
+    font-size: 20px;
+  }
+
+  .heroCircle1 {
+    width: 300px;
+    height: 300px;
+  }
+
+  .heroCircle2 {
+    width: 250px;
+    height: 250px;
+  }
+
+  .heroCircle3 {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 550px;
+    padding: 50px 24px;
+    background-position: 65% center;
+  }
+
+  /* Activar overlay oscuro en móviles para mejor legibilidad */
+  .heroOverlay {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.65) 0%,
+      rgba(0, 0, 0, 0.4) 50%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
+  }
+
+  .heroContent {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .heroTitle {
+    font-size: 36px;
+    letter-spacing: 0;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .heroSubtitle {
+    font-size: 18px;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .heroButtons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .heroBtnPrimary,
+  .heroBtnSecondary {
+    width: 100%;
+    padding: 16px 22px;
+  }
+
+  /* Ocultar círculos decorativos en móvil */
+  .heroDecorations {
+    display: none;
+  }
+}
+
+/* Mobile pequeño */
+@media (max-width: 480px) {
+  .hero {
+    min-height: 500px;
+    padding: 40px 20px;
+  }
+
+  .heroTitle {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .heroSubtitle {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+}

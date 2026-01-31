@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600&display=swap');
+
+.company {
+  padding: 30px 60px 60px;
+  background-color: #ffffff;
+}
+
+.companyContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Quiénes somos */
+.aboutSection {
+  text-align: center;
+  margin-bottom: 40px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mainTitle {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: #0a2540;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.mainTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #005FA3, #4A9FD8);
+  border-radius: 2px;
+}
+
+.aboutDescription {
+  font-size: 17px;
+  color: #555;
+  line-height: 1.6;
+  margin-top: 24px;
+}
+
+/* Grid de 3 columnas: Misión, Visión, Valores */
+.threeColumnsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Columnas con tema azul por defecto */
+.columnCard {
+  background: linear-gradient(135deg, #0a2540 0%, #005FA3 100%);
+  border-radius: 20px;
+  padding: 24px 22px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+}
+
+.columnCard::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -20%;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  transition: opacity 0.4s ease;
+}
+
+/* Hover: mantiene tema azul, solo cambia el icono */
+.columnCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 95, 163, 0.3);
+}
+
+/* Icon wrapper - cambia a blanco en hover */
+.iconWrapper {
+  width: 56px;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  transition: all 0.4s ease;
+}
+
+.columnCard:hover .iconWrapper {
+  background: white;
+  border: none;
+  transform: scale(1.15) rotate(360deg);
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.4);
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* Los iconos SVG cambian de blanco a azul en hover */
+.icon path,
+.icon circle {
+  stroke: white;
+  transition: stroke 0.4s ease;
+}
+
+.columnCard:hover .icon path,
+.columnCard:hover .icon circle {
+  stroke: #005FA3;
+}
+
+/* Títulos de sección - se mantienen en blanco */
+.sectionTitle {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 12px;
+  transition: color 0.4s ease;
+}
+
+/* Descripción de sección - se mantiene en blanco */
+.sectionDescription {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+  margin: 0;
+  transition: color 0.4s ease;
+}
+
+/* Lista simple de valores */
+.valuesSimpleList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 6px;
+  align-items: center;
+}
+
+.valueSimpleItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+  justify-content: center;
+}
+
+.valueSimpleItem:hover {
+  transform: translateX(4px);
+}
+
+.checkSmall {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* Los checks se mantienen en blanco */
+.checkSmall path {
+  stroke: white;
+  transition: stroke 0.4s ease;
+}
+
+.valueSimpleText {
+  font-size: 14px;
+  color: white;
+  line-height: 1.4;
+  font-weight: 500;
+  text-align: center;
+  transition: color 0.4s ease;
+}
+
+@media (max-width: 992px) {
+  .threeColumnsGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .company {
+    padding: 60px 30px;
+  }
+
+  .mainTitle {
+    font-size: 36px;
+  }
+}
