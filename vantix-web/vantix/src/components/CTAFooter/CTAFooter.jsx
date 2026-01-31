@@ -45,13 +45,13 @@ function CTAFooter() {
             <span>Vantix Technologies</span>
           </a>
           
-          <a 
+          {/*<a 
             href="mailto:info@vantix.lat"
             className={styles.socialLink}
           >
             <EmailIcon />
             <span>info@vantix.lat</span>
-          </a>
+          </a>*/}
           
           <a 
             href="https://wa.me/50369578712"
